@@ -60,17 +60,63 @@ C. DUNG.bat – tạo file STOP_TONG_QUAN.txt.
 [TRẢ VỀ] 3 khối code riêng, mỗi khối ghi rõ tên file và cách lưu.
 ```
 
-## Ráp file
+## Gửi prompt cho Gemini – từng bước
 
-| File | Lưu bằng Notepad, encoding |
-|---|---|
-| `BOT_TONG_QUAN.vbs` | ANSI |
-| `CHAY.bat`, `DUNG.bat` | ANSI |
-| `APP_TONG_QUAN.ps1` | UTF-8 with BOM |
+**A. Chuẩn bị kịch bản ghi**
 
-- Ô *Save as type* chọn **All files** để không bị thêm đuôi `.txt`.
-- 4 file để chung một thư mục. Chuột phải từng file › Properties › tick **Unblock** nếu có.
-- Chạy bằng cách bấm đúp `CHAY.bat` (không bấm đúp file `.vbs`). Khi bot chạy, không đụng vào SAP và Excel.
+1. Mở thư mục đã chọn ở nút *More* lúc ghi. Chuột phải file `GHI_TONG_QUAN.vbs` › **Open with** (Mở bằng) › **Notepad**. *Không bấm đúp*, vì bấm đúp là chạy kịch bản.
+2. Bấm **Ctrl+H** (Thay thế). Ô *Find what*: gõ MST thật đã dùng lúc ghi. Ô *Replace with*: gõ `0100000000`. Bấm **Replace All**.
+3. Bấm **Ctrl+A** (chọn hết) rồi **Ctrl+C** (copy).
+4. Đóng Notepad, bấm **Don't Save** (Không lưu).
+
+**B. Gửi cho Gemini**
+
+1. Mở **gemini.google.com**, đăng nhập Google, bấm **New chat**. Có chế độ *Pro* hoặc *Thinking* thì chọn.
+2. Ở khung **Prompt 1** bên trên, bấm nút copy (góc phải khung), dán vào ô chat Gemini. **Chưa bấm Enter.**
+3. Bôi đen dòng `(dán toàn bộ nội dung file .vbs vừa ghi)`, bấm **Ctrl+V** để thay bằng kịch bản đã copy.
+4. Cần xuống dòng thì bấm **Shift+Enter**. Kiểm tra không còn MST thật, rồi bấm **Gửi**.
+5. Lưu file `.vbs` Gemini trả về (phần dưới). Rồi dán **Prompt 2** vào **cùng cuộc trò chuyện**, gửi, lưu tiếp 3 file.
+
+> Code bị cắt giữa chừng? Gõ: "Gửi lại toàn bộ file trong 1 khối code, không lược."
+
+## Lưu code thành file – từng bước
+
+**Việc làm trước (1 lần): bật hiện đuôi file**
+
+- Windows 11: mở thư mục bất kỳ › **View** (Xem) › **Show** (Hiện) › tick **File name extensions**.
+- Windows 10: mở thư mục bất kỳ › tab **View** › tick **File name extensions**.
+- Tạo thư mục `BOT_TONG_QUAN` trên Desktop: chuột phải ra màn hình › New › Folder › gõ tên › Enter.
+
+**Lưu từng file (làm 4 lần)**
+
+1. Bấm phím **Windows**, gõ `notepad`, bấm **Enter**.
+2. Sang Gemini, ở góc trên bên phải khối code, bấm nút **Copy** (biểu tượng 2 ô vuông). Đừng bôi đen bằng chuột.
+3. Quay lại Notepad, bấm **Ctrl+V**. Kéo xuống cuối xem code còn đủ.
+4. Bấm **Ctrl+Shift+S** (File › Save as). Bên trái chọn **Desktop**, bấm đúp mở thư mục `BOT_TONG_QUAN`.
+5. Ô **Save as type**: chọn **All files (\*.\*)**.
+6. Ô **File name**: gõ đúng tên theo bảng dưới.
+7. Ô **Encoding** (cạnh nút Save): chọn theo bảng, rồi bấm **Save**.
+8. Bấm **Ctrl+N** mở trang trắng, làm lại từ bước 2 cho file tiếp theo.
+
+| Gõ vào ô File name | Lấy code từ | Ô Encoding chọn |
+|---|---|---|
+| `BOT_TONG_QUAN.vbs` | Prompt 1 | ANSI |
+| `APP_TONG_QUAN.ps1` | Prompt 2 – khối A | UTF-8 with BOM |
+| `CHAY.bat` | Prompt 2 – khối B | ANSI |
+| `DUNG.bat` | Prompt 2 – khối C | ANSI |
+
+**Kiểm tra:** thư mục có đúng 4 file, đuôi `.vbs` `.ps1` `.bat`, không có `.txt`.
+- Lỡ có `.txt`: chuột phải file › **Rename** › xóa `.txt` ở cuối › Enter › Yes.
+- Lỡ sai encoding: mở lại file bằng Notepad › Ctrl+Shift+S › chọn lại Encoding › Save › Yes để ghi đè.
+
+## Chạy thử với 3–5 MST
+
+1. Chuột phải từng file › **Properties** › nếu dưới cùng có ô **Unblock** thì tick › **OK**.
+2. Mở SAP, đăng nhập TMS, về màn hình chính.
+3. Bấm đúp **CHAY.bat** (không bấm đúp file `.vbs`). Cửa sổ app hiện ra.
+4. Copy 3–5 MST thử (mỗi dòng 1 MST, có 1 MST sai), bấm **Dan clipboard** hoặc Ctrl+V vào ô danh sách.
+5. Bấm **LAY TONG QUAN** › **Yes**. Không đụng chuột vào SAP và Excel khi bot chạy.
+6. Xong, mở `KET_QUA_TONG_QUAN.xlsx` trong thư mục, so 1 MST với tra tay trên FMCACOV.
 
 ## Prompt sửa lỗi
 
