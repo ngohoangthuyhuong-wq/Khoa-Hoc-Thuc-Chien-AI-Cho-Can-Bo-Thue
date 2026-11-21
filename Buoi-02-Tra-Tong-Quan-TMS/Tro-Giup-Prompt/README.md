@@ -1,4 +1,4 @@
-# Bộ cứu hộ + Trợ giúp prompt – Buổi 2
+# Bộ trợ giúp + Trợ giúp prompt – Buổi 2
 
 Dùng khi bot của bạn không chạy, hoặc muốn có khung chuẩn để Gemini sửa cho nhanh.
 Quay về [hướng dẫn Buổi 2](../README.md) · [mục lục khóa học](../../README.md)
@@ -7,17 +7,17 @@ Quay về [hướng dẫn Buổi 2](../README.md) · [mục lục khóa học](.
 
 | File | Dùng để |
 |---|---|
-| [Bo_Cuu_Ho_Buoi2.zip](Bo_Cuu_Ho_Buoi2.zip) | **Tải 1 lần là đủ** – chứa cả 5 file bên dưới |
-| `Bo-Cuu-Ho/BOT_TONG_QUAN.vbs` | Bot mẫu tra tổng quan FMCACOV, có ghi log từng bước |
-| `Bo-Cuu-Ho/APP_TONG_QUAN.ps1` | Cửa sổ app: dán MST, nút chạy, nút dừng |
-| `Bo-Cuu-Ho/CHAY.bat` | Bấm đúp để mở app |
-| `Bo-Cuu-Ho/DUNG.bat` | Bấm đúp để dừng bot |
-| `Bo-Cuu-Ho/MST_MAU.txt` | Ví dụ cách ghi danh sách MST |
+| [Bo_Tro_Giup_Buoi2.zip](Bo_Tro_Giup_Buoi2.zip) | **Tải 1 lần là đủ** – chứa cả 5 file bên dưới |
+| `Bo-Tro-Giup/BOT_TONG_QUAN.vbs` | Bot mẫu tra tổng quan FMCACOV, có ghi log từng bước |
+| `Bo-Tro-Giup/APP_TONG_QUAN.ps1` | Cửa sổ app: dán MST, nút chạy, nút dừng |
+| `Bo-Tro-Giup/CHAY.bat` | Bấm đúp để mở app |
+| `Bo-Tro-Giup/DUNG.bat` | Bấm đúp để dừng bot |
+| `Bo-Tro-Giup/MST_MAU.txt` | Ví dụ cách ghi danh sách MST |
 | [TRO_GIUP_PROMPT.md](TRO_GIUP_PROMPT.md) | **Prompt chuẩn** cho Gemini: sửa bot mẫu, sửa lỗi bằng log, nâng cấp |
 
-## Chạy bộ cứu hộ – từng bước
+## Chạy bộ trợ giúp – từng bước
 
-1. Bấm vào **Bo_Cuu_Ho_Buoi2.zip** ở bảng trên › bấm nút tải (mũi tên ↓ góc phải).
+1. Bấm vào **Bo_Tro_Giup_Buoi2.zip** ở bảng trên › bấm nút tải (mũi tên ↓ góc phải).
 2. Mở thư mục Downloads, chuột phải file zip › **Extract All** (Giải nén tất cả) › chọn **Desktop** › **Extract**.
 3. Mở thư mục vừa giải nén. Chuột phải từng file › **Properties** › nếu dưới cùng có ô **Unblock** thì tick › **OK**.
 4. Mở SAP, đăng nhập TMS, bật Scripting (Alt+F12 › Options › Accessibility & Scripting › Scripting › tick *Enable scripting*).

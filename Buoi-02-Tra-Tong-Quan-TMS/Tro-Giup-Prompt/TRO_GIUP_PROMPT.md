@@ -1,13 +1,13 @@
 # TRỢ GIÚP PROMPT – Buổi 2
 
-Bộ prompt chuẩn để dùng với Gemini, đi kèm **bộ cứu hộ** (4 file mẫu trong thư mục [`Bo-Cuu-Ho`](Bo-Cuu-Ho)).
+Bộ prompt chuẩn để dùng với Gemini, đi kèm **bộ trợ giúp** (4 file mẫu trong thư mục [`Bo-Tro-Giup`](Bo-Tro-Giup)).
 Quay về [hướng dẫn Buổi 2](../README.md) · [mục lục khóa học](../../README.md)
 
 > **Bảo mật:** trước khi dán bất cứ thứ gì lên Gemini, thay MST thật bằng `0100000000`. Không dán tên, số tiền của NNT, user hay mật khẩu TMS.
 
 ---
 
-## Vì sao dùng bộ cứu hộ thay vì bảo Gemini viết từ đầu
+## Vì sao dùng bộ trợ giúp thay vì bảo Gemini viết từ đầu
 
 Bot mẫu đã có sẵn mọi phần chung: kết nối SAP, đọc MST, ghi Excel, nút dừng, **ghi log từng bước**.
 Gemini chỉ phải sửa **đúng 2 chỗ** có đánh dấu `>>> SUA O DAY <<<`:
@@ -21,14 +21,14 @@ Phần Gemini tự viết rất ít, nên ít sai và cả lớp có chung một
 
 ## Prompt 1 – Sửa bot mẫu theo kịch bản ghi (dùng cái này trước)
 
-Dán vào Gemini, rồi dán **2 thứ** vào đúng chỗ trong ngoặc: nội dung file `BOT_TONG_QUAN.vbs` của bộ cứu hộ và kịch bản bạn vừa ghi.
+Dán vào Gemini, rồi dán **2 thứ** vào đúng chỗ trong ngoặc: nội dung file `BOT_TONG_QUAN.vbs` của bộ trợ giúp và kịch bản bạn vừa ghi.
 
 ```
 [VAI TRÒ] Bạn là lập trình viên VBScript chuyên SAP GUI Scripting, hướng dẫn cho người mới.
 [BỐI CẢNH] Tôi là cán bộ thuế, dùng TMS (SAP GUI) trên máy cơ quan. Máy chỉ chạy được wscript (VBScript), PowerShell 5, Excel. Không có Python, không chạy macro VBA.
 [FILE MẪU] Đây là bot mẫu đang chạy được. KHÔNG viết lại file này, chỉ sửa đúng 2 chỗ có dòng ">>> SUA O DAY <<<":
 """
-(dán toàn bộ nội dung file BOT_TONG_QUAN.vbs của bộ cứu hộ)
+(dán toàn bộ nội dung file BOT_TONG_QUAN.vbs của bộ trợ giúp)
 """
 [KỊCH BẢN GHI] Đây là kịch bản tôi ghi bằng Script Recording khi làm tay 1 MST. MST mẫu trong kịch bản là 0100000000:
 """
