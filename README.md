@@ -10,7 +10,7 @@ Giảng viên: **Ngô Hoàng Thuỳ Hương** · Zalo 0328 878 297
 
 | Buổi | Nội dung | Tài liệu |
 |---|---|---|
-| Buổi 1 | *(đang cập nhật)* | — |
+| Buổi 1 | Tổng quan về AI và ứng dụng trong công việc | [Hướng dẫn](Buoi-01-Tong-Quan-AI/README.md) · [Slide PDF](Buoi-01-Tong-Quan-AI/Buoi1_Slide.pdf) |
 | Buổi 2 | Tự tạo tool tra tổng quan TMS bằng Gemini | [Hướng dẫn + prompt](Buoi-02-Tra-Tong-Quan-TMS/README.md) · [Slide PDF](Buoi-02-Tra-Tong-Quan-TMS/Buoi2_Slide.pdf) |
 
 Mỗi buổi là một thư mục riêng, trong đó có slide PDF và file hướng dẫn kèm prompt mẫu để copy.
