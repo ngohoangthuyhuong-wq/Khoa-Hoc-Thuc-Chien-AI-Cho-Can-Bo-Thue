@@ -4,7 +4,7 @@ Giảng viên: Ngô Hoàng Thuỳ Hương · Zalo 0328 878 297
 
 Slide bài giảng: [Buoi2_Slide.pdf](Buoi2_Slide.pdf) · Quay về [mục lục khóa học](../README.md)
 
-> 🆘 **Bị kẹt?** Vào [**TRỢ GIÚP PROMPT**](Tro-Giup-Prompt/README.md): có **bộ cứu hộ** (4 file mẫu chạy được, tải 1 file zip), prompt chuẩn để Gemini sửa đúng chỗ, và cách đọc log để sửa lỗi.
+> 🆘 **Bị kẹt?** Vào [**TRỢ GIÚP PROMPT**](Tro-Giup-Prompt/README.md): có **bộ trợ giúp** (4 file mẫu chạy được, tải 1 file zip), prompt chuẩn để Gemini sửa đúng chỗ, và cách đọc log để sửa lỗi.
 
 Mục tiêu: học viên tự ghi kịch bản tra tổng quan 1 MST trên SAP GUI (FMCACOV), rồi ra lệnh cho Gemini để có bot tra tổng quan cho nhiều MST, ghi kết quả ra Excel. Không cần biết lập trình.
 
