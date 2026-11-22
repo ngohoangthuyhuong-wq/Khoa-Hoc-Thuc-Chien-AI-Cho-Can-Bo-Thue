@@ -20,26 +20,24 @@ Mục tiêu: học viên tự ghi kịch bản tra tổng quan 1 MST trên SAP G
 4. **Ráp và chạy thử**: lưu đúng tên, đúng encoding, thử với 3–5 MST.
 5. **Sửa lỗi và nâng cấp**: dùng prompt sửa lỗi, mỗi lần xin một tính năng.
 
-> **Bảo mật:** trước khi dán lên Gemini, thay MST thật bằng MST mẫu **0100000000**. Không dán tên, địa chỉ, số tiền của NNT. Không bao giờ dán user hoặc mật khẩu TMS.
+> **Bảo mật:** không bao giờ dán user hoặc mật khẩu TMS lên Gemini.
 
 ---
 
 ## Bước 3 – Cách gửi cho Gemini (hướng dẫn thao tác)
 
-> 📖 Phần này là **hướng dẫn để đọc và làm theo**. **KHÔNG dán phần này vào Gemini.**
-> Thứ dán vào Gemini chỉ là **khung xám to có nút copy ở góc**, nằm ngay dưới dòng 👉 *"COPY KHUNG NÀY"*.
+> 📖 Đây là hướng dẫn để đọc. **Chỉ copy khung xám có dòng 👉 COPY KHUNG NÀY.**
 
-**Nguyên tắc: copy cái nào, dán ngay cái đó.** Dán kịch bản trước, dán prompt ngay bên dưới, rồi Gửi. Không cần bôi đen gì cả.
+**Nhớ 1 câu: dán kịch bản trước, dán prompt sau, rồi Gửi.**
 
 | Bước | Làm gì |
 |---|---|
-| 1 | Chuột phải file kịch bản ghi **GHI_TONG_QUAN.vbs** › **Open with** (Mở bằng) › **Notepad**. *Không bấm đúp* – bấm đúp là chạy kịch bản. |
-| 2 | Bấm **Ctrl+H**: ô *Find what* gõ MST thật đã dùng lúc ghi, ô *Replace with* gõ **0100000000** › **Replace All**. Rồi bấm **Ctrl+A**, **Ctrl+C**. Đóng Notepad, bấm **Don't Save**. |
-| 3 | Mở **gemini.google.com** › **New chat**. Bấm vào ô chat › **Ctrl+V** (kịch bản hiện ra trong ô chat). **Chưa Gửi.** |
-| 4 | Bấm **Shift+Enter** 2 lần để xuống dòng. Quay lại trang này, bấm nút copy ở góc phải **khung Prompt 1** › về Gemini **Ctrl+V**. |
-| 5 | Bấm **Gửi**. |
+| 1 | Chuột phải file kịch bản ghi › **Open with › Notepad** › **Ctrl+A**, **Ctrl+C**. |
+| 2 | Vào **gemini.google.com** › **New chat** › **Ctrl+V**. *Chưa Gửi.* |
+| 3 | **Shift+Enter** 2 lần › copy **khung Prompt 1** bên dưới › **Ctrl+V**. |
+| 4 | Bấm **Gửi**. |
 
-> ⚠️ Trong ô chat Gemini, **Enter là gửi luôn**. Muốn xuống dòng thì bấm **Shift+Enter**.
+> Lưu ý: không bấm đúp file kịch bản (bấm đúp là chạy). Trong Gemini, **Enter là gửi luôn**, xuống dòng thì **Shift+Enter**.
 
 **Sau khi Gemini trả lời:** lưu file **.vbs** (mục *Lưu code thành file* bên dưới). Rồi copy **khung Prompt 2**, dán vào **cùng cuộc trò chuyện** đó, Gửi, lưu tiếp 3 file.
 
@@ -54,11 +52,11 @@ Mục tiêu: học viên tự ghi kịch bản tra tổng quan 1 MST trên SAP G
 ```
 [VAI TRÒ] Bạn là lập trình viên VBScript chuyên SAP GUI Scripting.
 [BỐI CẢNH] Tôi là cán bộ thuế, dùng TMS (SAP GUI) trên máy cơ quan. Máy KHÔNG cài được Python, KHÔNG chạy macro VBA. Chỉ có: wscript (VBScript), PowerShell 5, Excel.
-[KỊCH BẢN GHI] Phần tôi dán ở PHÍA TRÊN tin nhắn này là kịch bản tôi ghi bằng Script Recording khi tra tổng quan 1 MST trên màn FMCACOV. MST mẫu trong kịch bản là 0100000000.
+[KỊCH BẢN GHI] Phần tôi dán ở PHÍA TRÊN tin nhắn này là kịch bản tôi ghi bằng Script Recording khi tra tổng quan 1 MST trên màn FMCACOV. MST trong kịch bản là MST tôi gõ lúc ghi (ở dòng có .text = "...").
 [VIỆC CẦN LÀM] Viết file BOT_TONG_QUAN.vbs chạy cho NHIỀU MST:
 1. Đọc MST_CHAY.txt cùng thư mục: mỗi dòng 1 MST, bỏ dòng trống, bỏ MST trùng. MST hợp lệ: 10 số, 10 số-3 số, hoặc 12 số.
 2. Kết nối SAP GUI đang mở bằng GetObject("SAPGUI"), dùng phiên đầu tiên. Chưa mở SAP hoặc chưa bật scripting thì báo lỗi dễ hiểu rồi thoát.
-3. Mỗi MST: làm lại đúng các bước trong kịch bản, thay MST mẫu bằng MST đang chạy. Chờ SAP xử lý xong (session.Busy) trước khi đọc, chờ tối đa 30 giây.
+3. Mỗi MST: làm lại đúng các bước trong kịch bản, thay MST lúc ghi bằng MST đang chạy. Chờ SAP xử lý xong (session.Busy) trước khi đọc, chờ tối đa 30 giây.
 4. Đọc lưới kết quả (GuiGridView): lấy HẾT dòng (cuộn firstVisibleRow để tải đủ) và hết cột.
 5. Ghi KET_QUA_TONG_QUAN.xlsx: sheet "Ket qua" (cột A = MST, sau đó các cột của lưới), sheet "Tien do" (STT, MST, tên NNT, trạng thái OK / KHONG CO DU LIEU / LOI + chữ ở sbar). Lưu file sau MỖI MST để dừng giữa chừng vẫn còn dữ liệu.
 6. Gặp popup lạ (wnd[1], wnd[2]...): đóng bằng sendVKey 12, quay về FMCACOV, ghi LOI cho MST đó rồi chạy tiếp MST sau, không dừng cả bot.
@@ -127,15 +125,16 @@ C. DUNG.bat – tạo file STOP_TONG_QUAN.txt.
 
 ## Prompt sửa lỗi
 
-Cũng làm theo nguyên tắc **copy cái nào, dán ngay cái đó**:
-1. Mở **LOG_TONG_QUAN.txt** bằng Notepad, bấm **Ctrl+End** xuống cuối, bôi đen khoảng 20 dòng cuối › **Ctrl+C**.
-2. Vào **đúng cuộc trò chuyện Gemini đã tạo bot** › **Ctrl+V**. Kiểm tra không còn MST thật (có thì sửa thành **0100000000**).
-3. **Shift+Enter** 2 lần › copy **khung dưới đây** › **Ctrl+V** › gõ thêm câu thông báo lỗi Windows hiện ra (nếu có) › **Gửi**.
+| Bước | Làm gì |
+|---|---|
+| 1 | Mở **LOG_TONG_QUAN.txt** bằng Notepad › **Ctrl+End** › bôi đen khoảng 20 dòng cuối › **Ctrl+C**. |
+| 2 | Vào **đúng cuộc trò chuyện Gemini đã tạo bot** › **Ctrl+V**. |
+| 3 | **Shift+Enter** 2 lần › copy **khung dưới đây** › **Ctrl+V** › gõ thông báo lỗi (nếu có) › **Gửi**. |
 
 👉 **COPY KHUNG NÀY dán vào Gemini, ngay dưới đoạn log đã dán:**
 
 ```
-Bot của tôi bị lỗi khi chạy. Phần tôi dán ở PHÍA TRÊN là 20 dòng cuối của LOG_TONG_QUAN.txt (đã thay MST thật).
+Bot của tôi bị lỗi khi chạy. Phần tôi dán ở PHÍA TRÊN là 20 dòng cuối của LOG_TONG_QUAN.txt.
 Thông báo lỗi Windows hiện ra (nếu có) tôi gõ ở cuối tin nhắn này.
 Hãy:
 1) Giải thích nguyên nhân trong 2–3 câu dễ hiểu.
