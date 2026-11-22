@@ -6,6 +6,8 @@ Slide bài giảng: [Buoi2_Slide.pdf](Buoi2_Slide.pdf) · Quay về [mục lục
 
 > 🆘 **Bị kẹt?** Vào [**TRỢ GIÚP PROMPT**](Tro-Giup-Prompt/README.md): có **bộ trợ giúp** (4 file mẫu chạy được, tải 1 file zip), prompt chuẩn để Gemini sửa đúng chỗ, và cách đọc log để sửa lỗi.
 
+> ⚠️ **Tắt dịch tự động của trình duyệt** (bấm biểu tượng 文A trên thanh địa chỉ › *Hiển thị bản gốc*). Trang này viết sẵn tiếng Việt; bản dịch máy làm sai chữ, ví dụ "Chưa bấm Enter" bị dịch thành "Nhấn Enter".
+
 Mục tiêu: học viên tự ghi kịch bản tra tổng quan 1 MST trên SAP GUI (FMCACOV), rồi ra lệnh cho Gemini để có bot tra tổng quan cho nhiều MST, ghi kết quả ra Excel. Không cần biết lập trình.
 
 ---
@@ -14,7 +16,7 @@ Mục tiêu: học viên tự ghi kịch bản tra tổng quan 1 MST trên SAP G
 
 1. **Chuẩn bị**: bật Scripting (Alt+F12 › Options › Accessibility & Scripting › Scripting › tick *Enable scripting*, bỏ tick 2 ô *Notify when…*), có Excel, tạo thư mục `BOT_TONG_QUAN` trên Desktop.
 2. **Ghi kịch bản**: Alt+F12 › *Script Recording and Playback…* › *More* (chọn chỗ lưu) › *Record* › làm tay trọn 1 MST trên FMCACOV › *Stop*.
-3. **Ra lệnh Gemini**: dùng Prompt 1 và Prompt 2 bên dưới.
+3. **Ra lệnh Gemini**: làm theo mục **"Bước 3 – Cách gửi cho Gemini"** ngay bên dưới.
 4. **Ráp và chạy thử**: lưu đúng tên, đúng encoding, thử với 3–5 MST.
 5. **Sửa lỗi và nâng cấp**: dùng prompt sửa lỗi, mỗi lần xin một tính năng.
 
@@ -22,7 +24,29 @@ Mục tiêu: học viên tự ghi kịch bản tra tổng quan 1 MST trên SAP G
 
 ---
 
+## Bước 3 – Cách gửi cho Gemini (hướng dẫn thao tác)
+
+> 📖 Phần này là **hướng dẫn để đọc và làm theo**. **KHÔNG dán phần này vào Gemini.**
+> Thứ dán vào Gemini chỉ là **khung xám** có dòng 👉 *"COPY KHUNG NÀY"* ở bên dưới.
+
+Làm **đúng thứ tự** (dán prompt trước, copy kịch bản sau – nếu copy kịch bản trước thì khi copy prompt, kịch bản sẽ bị ghi đè mất):
+
+1. Mở **gemini.google.com**, đăng nhập Google, bấm **New chat**. Có chế độ *Pro* hoặc *Thinking* thì chọn.
+2. Kéo xuống khung xám **Prompt 1** bên dưới, bấm nút copy (góc phải khung), dán vào ô chat Gemini. **Chưa bấm Enter, chưa Gửi.**
+3. Mở thư mục đã chọn ở nút *More* lúc ghi. Chuột phải file `GHI_TONG_QUAN.vbs` › **Open with** (Mở bằng) › **Notepad**. *Không bấm đúp* – bấm đúp là chạy kịch bản.
+4. Bấm **Ctrl+H** (Thay thế). Ô *Find what*: gõ MST thật đã dùng lúc ghi. Ô *Replace with*: gõ `0100000000`. Bấm **Replace All**.
+5. Bấm **Ctrl+A** (chọn hết) rồi **Ctrl+C** (copy). Đóng Notepad, bấm **Don't Save** (Không lưu).
+6. Quay lại Gemini. Trong ô chat, dùng chuột **bôi đen dòng** `(dán toàn bộ nội dung file .vbs vừa ghi)`, bấm **Ctrl+V** – kịch bản thay vào đúng chỗ.
+7. Kiểm tra không còn MST thật, rồi bấm **Gửi**. (Cần xuống dòng trong ô chat thì bấm **Shift+Enter**, vì Enter là gửi luôn.)
+8. Lưu file `.vbs` Gemini trả về (mục *Lưu code thành file* bên dưới). Rồi copy khung **Prompt 2**, dán vào **cùng cuộc trò chuyện**, gửi, lưu tiếp 3 file.
+
+> Code bị cắt giữa chừng? Gõ: "Gửi lại toàn bộ file trong 1 khối code, không lược."
+
+---
+
 ## Prompt 1 – Bot `.vbs`
+
+👉 **COPY KHUNG NÀY dán vào Gemini** (bấm nút copy góc phải khung):
 
 ```
 [VAI TRÒ] Bạn là lập trình viên VBScript chuyên SAP GUI Scripting.
@@ -46,7 +70,7 @@ Mục tiêu: học viên tự ghi kịch bản tra tổng quan 1 MST trên SAP G
 
 ## Prompt 2 – App giao diện + 2 file `.bat`
 
-Gửi tiếp trong **cùng cuộc trò chuyện** với Prompt 1.
+👉 **COPY KHUNG NÀY dán vào Gemini**, gửi tiếp trong **cùng cuộc trò chuyện** với Prompt 1:
 
 ```
 [VIỆC CẦN LÀM] Viết thêm 3 file cho bot trên, để cùng thư mục:
@@ -61,25 +85,6 @@ C. DUNG.bat – tạo file STOP_TONG_QUAN.txt.
 [RÀNG BUỘC] Chữ trên giao diện viết không dấu. Không cần quyền admin.
 [TRẢ VỀ] 3 khối code riêng, mỗi khối ghi rõ tên file và cách lưu.
 ```
-
-## Gửi prompt cho Gemini – từng bước
-
-**A. Chuẩn bị kịch bản ghi**
-
-1. Mở thư mục đã chọn ở nút *More* lúc ghi. Chuột phải file `GHI_TONG_QUAN.vbs` › **Open with** (Mở bằng) › **Notepad**. *Không bấm đúp*, vì bấm đúp là chạy kịch bản.
-2. Bấm **Ctrl+H** (Thay thế). Ô *Find what*: gõ MST thật đã dùng lúc ghi. Ô *Replace with*: gõ `0100000000`. Bấm **Replace All**.
-3. Bấm **Ctrl+A** (chọn hết) rồi **Ctrl+C** (copy).
-4. Đóng Notepad, bấm **Don't Save** (Không lưu).
-
-**B. Gửi cho Gemini**
-
-1. Mở **gemini.google.com**, đăng nhập Google, bấm **New chat**. Có chế độ *Pro* hoặc *Thinking* thì chọn.
-2. Ở khung **Prompt 1** bên trên, bấm nút copy (góc phải khung), dán vào ô chat Gemini. **Chưa bấm Enter.**
-3. Bôi đen dòng `(dán toàn bộ nội dung file .vbs vừa ghi)`, bấm **Ctrl+V** để thay bằng kịch bản đã copy.
-4. Cần xuống dòng thì bấm **Shift+Enter**. Kiểm tra không còn MST thật, rồi bấm **Gửi**.
-5. Lưu file `.vbs` Gemini trả về (phần dưới). Rồi dán **Prompt 2** vào **cùng cuộc trò chuyện**, gửi, lưu tiếp 3 file.
-
-> Code bị cắt giữa chừng? Gõ: "Gửi lại toàn bộ file trong 1 khối code, không lược."
 
 ## Lưu code thành file – từng bước
 
@@ -121,6 +126,8 @@ C. DUNG.bat – tạo file STOP_TONG_QUAN.txt.
 6. Xong, mở `KET_QUA_TONG_QUAN.xlsx` trong thư mục, so 1 MST với tra tay trên FMCACOV.
 
 ## Prompt sửa lỗi
+
+👉 **COPY KHUNG NÀY dán vào Gemini** khi bot báo lỗi (điền vào chỗ trống trước khi gửi):
 
 ```
 Bot của tôi bị lỗi khi chạy. Thông tin:
