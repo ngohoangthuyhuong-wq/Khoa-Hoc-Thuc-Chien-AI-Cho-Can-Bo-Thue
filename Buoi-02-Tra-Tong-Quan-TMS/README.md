@@ -29,16 +29,19 @@ Mục tiêu: học viên tự ghi kịch bản tra tổng quan 1 MST trên SAP G
 > 📖 Phần này là **hướng dẫn để đọc và làm theo**. **KHÔNG dán phần này vào Gemini.**
 > Thứ dán vào Gemini chỉ là **khung xám** có dòng 👉 *"COPY KHUNG NÀY"* ở bên dưới.
 
-Làm **đúng thứ tự** (dán prompt trước, copy kịch bản sau – nếu copy kịch bản trước thì khi copy prompt, kịch bản sẽ bị ghi đè mất):
+**Nguyên tắc: copy cái nào, dán ngay cái đó.** Dán kịch bản trước, dán prompt ngay bên dưới, rồi Gửi. Không cần bôi đen gì cả.
 
-1. Mở **gemini.google.com**, đăng nhập Google, bấm **New chat**. Có chế độ *Pro* hoặc *Thinking* thì chọn.
-2. Kéo xuống khung xám **Prompt 1** bên dưới, bấm nút copy (góc phải khung), dán vào ô chat Gemini. **Chưa bấm Enter, chưa Gửi.**
-3. Mở thư mục đã chọn ở nút *More* lúc ghi. Chuột phải file `GHI_TONG_QUAN.vbs` › **Open with** (Mở bằng) › **Notepad**. *Không bấm đúp* – bấm đúp là chạy kịch bản.
-4. Bấm **Ctrl+H** (Thay thế). Ô *Find what*: gõ MST thật đã dùng lúc ghi. Ô *Replace with*: gõ `0100000000`. Bấm **Replace All**.
-5. Bấm **Ctrl+A** (chọn hết) rồi **Ctrl+C** (copy). Đóng Notepad, bấm **Don't Save** (Không lưu).
-6. Quay lại Gemini. Trong ô chat, dùng chuột **bôi đen dòng** `(dán toàn bộ nội dung file .vbs vừa ghi)`, bấm **Ctrl+V** – kịch bản thay vào đúng chỗ.
-7. Kiểm tra không còn MST thật, rồi bấm **Gửi**. (Cần xuống dòng trong ô chat thì bấm **Shift+Enter**, vì Enter là gửi luôn.)
-8. Lưu file `.vbs` Gemini trả về (mục *Lưu code thành file* bên dưới). Rồi copy khung **Prompt 2**, dán vào **cùng cuộc trò chuyện**, gửi, lưu tiếp 3 file.
+| Bước | Làm gì |
+|---|---|
+| 1 | Chuột phải file kịch bản ghi `GHI_TONG_QUAN.vbs` › **Open with** (Mở bằng) › **Notepad**. *Không bấm đúp* – bấm đúp là chạy kịch bản. |
+| 2 | Bấm **Ctrl+H**: ô *Find what* gõ MST thật đã dùng lúc ghi, ô *Replace with* gõ `0100000000` › **Replace All**. Rồi bấm **Ctrl+A**, **Ctrl+C**. Đóng Notepad, bấm **Don't Save**. |
+| 3 | Mở **gemini.google.com** › **New chat**. Bấm vào ô chat › **Ctrl+V** (kịch bản hiện ra trong ô chat). **Chưa Gửi.** |
+| 4 | Bấm **Shift+Enter** 2 lần để xuống dòng. Quay lại trang này, bấm nút copy ở góc phải **khung Prompt 1** › về Gemini **Ctrl+V**. |
+| 5 | Bấm **Gửi**. |
+
+> ⚠️ Trong ô chat Gemini, **Enter là gửi luôn**. Muốn xuống dòng thì bấm **Shift+Enter**.
+
+**Sau khi Gemini trả lời:** lưu file `.vbs` (mục *Lưu code thành file* bên dưới). Rồi copy **khung Prompt 2**, dán vào **cùng cuộc trò chuyện** đó, Gửi, lưu tiếp 3 file.
 
 > Code bị cắt giữa chừng? Gõ: "Gửi lại toàn bộ file trong 1 khối code, không lược."
 
@@ -46,15 +49,12 @@ Làm **đúng thứ tự** (dán prompt trước, copy kịch bản sau – nế
 
 ## Prompt 1 – Bot `.vbs`
 
-👉 **COPY KHUNG NÀY dán vào Gemini** (bấm nút copy góc phải khung):
+👉 **COPY KHUNG NÀY dán vào Gemini, ngay dưới kịch bản đã dán** (bấm nút copy góc phải khung):
 
 ```
 [VAI TRÒ] Bạn là lập trình viên VBScript chuyên SAP GUI Scripting.
 [BỐI CẢNH] Tôi là cán bộ thuế, dùng TMS (SAP GUI) trên máy cơ quan. Máy KHÔNG cài được Python, KHÔNG chạy macro VBA. Chỉ có: wscript (VBScript), PowerShell 5, Excel.
-[KỊCH BẢN GHI] Đây là kịch bản tôi ghi bằng Script Recording khi tra tổng quan 1 MST trên màn FMCACOV. MST mẫu trong kịch bản là 0100000000:
-"""
-(dán toàn bộ nội dung file .vbs vừa ghi)
-"""
+[KỊCH BẢN GHI] Phần tôi dán ở PHÍA TRÊN tin nhắn này là kịch bản tôi ghi bằng Script Recording khi tra tổng quan 1 MST trên màn FMCACOV. MST mẫu trong kịch bản là 0100000000.
 [VIỆC CẦN LÀM] Viết file BOT_TONG_QUAN.vbs chạy cho NHIỀU MST:
 1. Đọc MST_CHAY.txt cùng thư mục: mỗi dòng 1 MST, bỏ dòng trống, bỏ MST trùng. MST hợp lệ: 10 số, 10 số-3 số, hoặc 12 số.
 2. Kết nối SAP GUI đang mở bằng GetObject("SAPGUI"), dùng phiên đầu tiên. Chưa mở SAP hoặc chưa bật scripting thì báo lỗi dễ hiểu rồi thoát.
@@ -127,20 +127,21 @@ C. DUNG.bat – tạo file STOP_TONG_QUAN.txt.
 
 ## Prompt sửa lỗi
 
-👉 **COPY KHUNG NÀY dán vào Gemini** khi bot báo lỗi (điền vào chỗ trống trước khi gửi):
+Cũng làm theo nguyên tắc **copy cái nào, dán ngay cái đó**:
+1. Mở `LOG_TONG_QUAN.txt` bằng Notepad, bấm **Ctrl+End** xuống cuối, bôi đen khoảng 20 dòng cuối › **Ctrl+C**.
+2. Vào **đúng cuộc trò chuyện Gemini đã tạo bot** › **Ctrl+V**. Kiểm tra không còn MST thật (có thì sửa thành `0100000000`).
+3. **Shift+Enter** 2 lần › copy **khung dưới đây** › **Ctrl+V** › gõ thêm câu thông báo lỗi Windows hiện ra (nếu có) › **Gửi**.
+
+👉 **COPY KHUNG NÀY dán vào Gemini, ngay dưới đoạn log đã dán:**
 
 ```
-Bot của tôi bị lỗi khi chạy. Thông tin:
-- Thông báo lỗi (gõ lại nguyên văn): Dòng ___, Ký tự ___, Lỗi: ______________
-- Màn hình SAP lúc lỗi đang ở: (tên màn hình / popup đang hiện)
-- 20 dòng cuối LOG_TONG_QUAN.txt (đã thay MST thật bằng MST mẫu):
-"""
-(dán log)
-"""
+Bot của tôi bị lỗi khi chạy. Phần tôi dán ở PHÍA TRÊN là 20 dòng cuối của LOG_TONG_QUAN.txt (đã thay MST thật).
+Thông báo lỗi Windows hiện ra (nếu có) tôi gõ ở cuối tin nhắn này.
 Hãy:
-1) Giải thích nguyên nhân trong 2–3 câu.
+1) Giải thích nguyên nhân trong 2–3 câu dễ hiểu.
 2) Chỉ sửa hàm liên quan, trả về NGUYÊN hàm đã sửa, không đổi phần khác.
 3) Nói rõ tôi thay đoạn đó vào chỗ nào trong file.
+Thông báo lỗi:
 ```
 
 ## Lỗi thường gặp
