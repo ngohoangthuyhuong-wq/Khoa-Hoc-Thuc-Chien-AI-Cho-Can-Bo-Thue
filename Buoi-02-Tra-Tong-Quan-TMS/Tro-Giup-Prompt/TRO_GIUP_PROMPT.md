@@ -3,6 +3,10 @@
 Bộ prompt chuẩn để dùng với Gemini, đi kèm **bộ trợ giúp** (4 file mẫu trong thư mục [`Bo-Tro-Giup`](Bo-Tro-Giup)).
 Quay về [hướng dẫn Buổi 2](../README.md) · [mục lục khóa học](../../README.md)
 
+> ⚠️ **Tắt dịch tự động của trình duyệt** (biểu tượng 文A trên thanh địa chỉ › *Hiển thị bản gốc*) – bản dịch máy làm sai chữ.
+>
+> 📖 Chữ thường là **hướng dẫn để đọc**. Thứ dán vào Gemini chỉ là **khung xám** có dòng 👉 *COPY KHUNG NÀY*.
+
 > **Bảo mật:** trước khi dán bất cứ thứ gì lên Gemini, thay MST thật bằng `0100000000`. Không dán tên, số tiền của NNT, user hay mật khẩu TMS.
 
 ---
@@ -21,7 +25,14 @@ Phần Gemini tự viết rất ít, nên ít sai và cả lớp có chung một
 
 ## Prompt 1 – Sửa bot mẫu theo kịch bản ghi (dùng cái này trước)
 
-Dán vào Gemini, rồi dán **2 thứ** vào đúng chỗ trong ngoặc: nội dung file `BOT_TONG_QUAN.vbs` của bộ trợ giúp và kịch bản bạn vừa ghi.
+Làm **đúng thứ tự** (mỗi lần copy cái mới thì cái cũ bị ghi đè, nên copy cái nào dán ngay cái đó):
+
+1. Copy khung xám bên dưới, dán vào Gemini. **Chưa Gửi.**
+2. Mở `BOT_TONG_QUAN.vbs` của bộ trợ giúp bằng Notepad (chuột phải › Open with › Notepad) › **Ctrl+A**, **Ctrl+C** › quay lại Gemini, bôi đen dòng `(dán toàn bộ nội dung file BOT_TONG_QUAN.vbs của bộ trợ giúp)` › **Ctrl+V**.
+3. Mở kịch bản bạn vừa ghi bằng Notepad › **Ctrl+H** thay MST thật bằng `0100000000` › **Ctrl+A**, **Ctrl+C** › quay lại Gemini, bôi đen dòng `(dán kịch bản ghi)` › **Ctrl+V**.
+4. Đóng Notepad, bấm **Don't Save**. Kiểm tra lại rồi bấm **Gửi**.
+
+👉 **COPY KHUNG NÀY dán vào Gemini:**
 
 ```
 [VAI TRÒ] Bạn là lập trình viên VBScript chuyên SAP GUI Scripting, hướng dẫn cho người mới.
@@ -64,7 +75,9 @@ Bot mẫu ghi log từng bước vào `LOG_TONG_QUAN.txt`. Khi lỗi, log trông
 - Dòng **`bN` cuối cùng** cho biết bot chết ở bước nào (ở đây là b2).
 - Ba dòng **`!!!`** cho biết mã lỗi, đang ở màn hình nào, popup nào đang mở, SAP báo gì.
 
-Mở log bằng Notepad, copy **từ dòng `MST ...` của MST bị lỗi đến hết**, thay MST thật bằng MST mẫu, rồi dán vào prompt:
+Làm đúng thứ tự: copy khung xám bên dưới dán vào Gemini (**chưa Gửi**) › mở log bằng Notepad, bôi đen **từ dòng `MST ...` của MST bị lỗi đến hết**, Ctrl+C › quay lại Gemini, bôi đen dòng `(dán log)`, Ctrl+V › tương tự cho `(dán Sub CacBuocTrenTMS)` › kiểm tra không còn MST thật › **Gửi**.
+
+👉 **COPY KHUNG NÀY dán vào Gemini:**
 
 ```
 Bot của tôi bị lỗi. Đây là đoạn log của MST bị lỗi (đã thay MST thật):
@@ -88,6 +101,8 @@ Hãy:
 
 ## Prompt 3 – Thêm log cho bot tự viết (nếu không dùng bot mẫu)
 
+👉 **COPY KHUNG NÀY dán vào Gemini**, rồi dán file .vbs của bạn ngay bên dưới, Gửi:
+
 ```
 Thêm vào bot của tôi cách ghi log giống mẫu sau, không đổi phần xử lý:
 - Sub Ghi(s): ghi thêm 1 dòng "ngày giờ  s" vào LOG_TONG_QUAN.txt cùng thư mục.
@@ -102,6 +117,8 @@ Chỉ dùng ASCII. Trả về các Sub mới và nói rõ chèn dòng Ghi vào n
 ## Prompt 4 – Nâng cấp từng bước
 
 Mỗi lần chỉ xin **1** tính năng, chạy thử xong mới xin tiếp. Luôn dán kèm file hiện tại.
+
+👉 **COPY KHUNG NÀY dán vào Gemini** (chưa Gửi), thay phần trong ngoặc rồi mới Gửi:
 
 ```
 Đây là bot hiện tại đang chạy tốt:
