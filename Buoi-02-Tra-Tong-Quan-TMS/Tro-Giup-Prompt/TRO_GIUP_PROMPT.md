@@ -1,13 +1,13 @@
 # TRỢ GIÚP PROMPT – Buổi 2
 
-Bộ prompt chuẩn để dùng với Gemini, đi kèm **bộ trợ giúp** (4 file mẫu trong thư mục [`Bo-Tro-Giup`](Bo-Tro-Giup)).
+Bộ prompt chuẩn để dùng với Gemini, đi kèm **bộ trợ giúp** (4 file mẫu trong thư mục [**Bo-Tro-Giup**](Bo-Tro-Giup)).
 Quay về [hướng dẫn Buổi 2](../README.md) · [mục lục khóa học](../../README.md)
 
 > ⚠️ **Tắt dịch tự động của trình duyệt** (biểu tượng 文A trên thanh địa chỉ › *Hiển thị bản gốc*) – bản dịch máy làm sai chữ.
 >
-> 📖 Chữ thường là **hướng dẫn để đọc**. Thứ dán vào Gemini chỉ là **khung xám** có dòng 👉 *COPY KHUNG NÀY*.
+> 📖 Chữ thường là **hướng dẫn để đọc**. Thứ dán vào Gemini chỉ là **khung xám to có nút copy ở góc**, nằm ngay dưới dòng 👉 *COPY KHUNG NÀY*.
 
-> **Bảo mật:** trước khi dán bất cứ thứ gì lên Gemini, thay MST thật bằng `0100000000`. Không dán tên, số tiền của NNT, user hay mật khẩu TMS.
+> **Bảo mật:** trước khi dán bất cứ thứ gì lên Gemini, thay MST thật bằng **0100000000**. Không dán tên, số tiền của NNT, user hay mật khẩu TMS.
 
 ## Nguyên tắc chung – nhớ 1 câu
 
@@ -22,10 +22,10 @@ Quay về [hướng dẫn Buổi 2](../README.md) · [mục lục khóa học](.
 ## Vì sao dùng bộ trợ giúp thay vì bảo Gemini viết từ đầu
 
 Bot mẫu đã có sẵn mọi phần chung: kết nối SAP, đọc MST, ghi Excel, nút dừng, **ghi log từng bước**.
-Gemini chỉ phải sửa **đúng 2 chỗ** có đánh dấu `>>> SUA O DAY <<<`:
+Gemini chỉ phải sửa **đúng 2 chỗ** có đánh dấu **>>> SUA O DAY <<<**:
 
-1. Hằng số `MAN_HINH` – mã màn hình TMS.
-2. `Sub CacBuocTrenTMS` – các bước thao tác cho 1 MST, chép từ kịch bản ghi.
+1. Hằng số **MAN_HINH** – mã màn hình TMS.
+2. **Sub CacBuocTrenTMS** – các bước thao tác cho 1 MST, chép từ kịch bản ghi.
 
 Phần Gemini tự viết rất ít, nên ít sai và cả lớp có chung một khung, giảng viên dễ hỗ trợ.
 
@@ -36,9 +36,9 @@ Phần Gemini tự viết rất ít, nên ít sai và cả lớp có chung một
 | Bước | Làm gì |
 |---|---|
 | 1 | Mở **gemini.google.com** › **New chat**. |
-| 2 | Chuột phải `BOT_TONG_QUAN.vbs` (trong thư mục bộ trợ giúp) › **Open with › Notepad** › **Ctrl+A**, **Ctrl+C** › đóng Notepad › về Gemini bấm vào ô chat › **Ctrl+V**. |
+| 2 | Chuột phải **BOT_TONG_QUAN.vbs** (trong thư mục bộ trợ giúp) › **Open with › Notepad** › **Ctrl+A**, **Ctrl+C** › đóng Notepad › về Gemini bấm vào ô chat › **Ctrl+V**. |
 | 3 | **Shift+Enter** 2 lần. |
-| 4 | Chuột phải file **kịch bản bạn vừa ghi** › **Open with › Notepad** › **Ctrl+H** thay MST thật bằng `0100000000` › **Ctrl+A**, **Ctrl+C** › đóng, bấm **Don't Save** › về Gemini **Ctrl+V**. |
+| 4 | Chuột phải file **kịch bản bạn vừa ghi** › **Open with › Notepad** › **Ctrl+H** thay MST thật bằng **0100000000** › **Ctrl+A**, **Ctrl+C** › đóng, bấm **Don't Save** › về Gemini **Ctrl+V**. |
 | 5 | **Shift+Enter** 2 lần › copy **khung dưới đây** › về Gemini **Ctrl+V** › **Gửi**. |
 
 👉 **COPY KHUNG NÀY dán vào Gemini, ngay dưới 2 phần đã dán:**
@@ -63,24 +63,22 @@ Phần Gemini tự viết rất ít, nên ít sai và cả lớp có chung một
 
 ## Prompt 2 – Sửa lỗi bằng log (quan trọng nhất)
 
-Bot mẫu ghi log từng bước vào `LOG_TONG_QUAN.txt`. Khi lỗi, log trông như sau:
+Bot mẫu ghi log từng bước vào **LOG_TONG_QUAN.txt**. Khi lỗi, log trông như sau (đây chỉ là **ví dụ để nhìn**, không copy):
 
-```
-21/11/2026 15:02:10  MST 1/5 = 0100000000
-21/11/2026 15:02:10    b1: bam F4 mo o tim MST
-21/11/2026 15:02:11    b2: chon tab tim kiem trong popup
-21/11/2026 15:02:11    !!! LOI so 619: The control could not be found by id.
-21/11/2026 15:02:11    !!! Man hinh: FMCACOV | Cua so tren cung: wnd[1] = Tim doi tuong
-21/11/2026 15:02:11    !!! Thanh trang thai:
-```
+> 21/11/2026 15:02:10 · MST 1/5 = 0100000000
+> 21/11/2026 15:02:10 · b1: bam F4 mo o tim MST
+> 21/11/2026 15:02:11 · **b2: chon tab tim kiem trong popup** ← bước cuối, bot chết ở đây
+> 21/11/2026 15:02:11 · !!! LOI so 619: The control could not be found by id.
+> 21/11/2026 15:02:11 · !!! Man hinh: FMCACOV | Cua so tren cung: wnd[1] = Tim doi tuong
+> 21/11/2026 15:02:11 · !!! Thanh trang thai:
 
-- Dòng **`bN` cuối cùng** cho biết bot chết ở bước nào (ở đây là b2).
-- Ba dòng **`!!!`** cho biết mã lỗi, đang ở màn hình nào, popup nào đang mở, SAP báo gì.
+- Dòng bN** cuối cùng** cho biết bot chết ở bước nào (ở đây là b2).
+- Ba dòng !!! cho biết mã lỗi, đang ở màn hình nào, popup nào đang mở, SAP báo gì.
 
 | Bước | Làm gì |
 |---|---|
 | 1 | Mở **đúng cuộc trò chuyện Gemini đã tạo bot** (cột trái Gemini có lịch sử). |
-| 2 | Mở `LOG_TONG_QUAN.txt` bằng Notepad › **Ctrl+End** xuống cuối › bôi đen từ dòng `MST ...` của MST bị lỗi đến hết › **Ctrl+C** › về Gemini **Ctrl+V**. Sửa MST thật thành `0100000000`. |
+| 2 | Mở **LOG_TONG_QUAN.txt** bằng Notepad › **Ctrl+End** xuống cuối › bôi đen từ dòng **MST ...** của MST bị lỗi đến hết › **Ctrl+C** › về Gemini **Ctrl+V**. Sửa MST thật thành **0100000000**. |
 | 3 | **Shift+Enter** 2 lần › copy **khung dưới đây** › **Ctrl+V** › **Gửi**. |
 
 👉 **COPY KHUNG NÀY dán vào Gemini, ngay dưới đoạn log đã dán:**
@@ -94,7 +92,7 @@ Hãy:
 4) Nếu cần tôi ghi lại kịch bản cho riêng bước đó, hãy nói rõ ghi từ màn hình nào đến màn hình nào.
 ```
 
-> Lỗi `619 – The control could not be found by id` gần như luôn là **ID trên máy mình khác kịch bản** hoặc **có popup bất ngờ**. Cách chắc nhất: ghi lại kịch bản riêng cho bước đó, dán vào Gemini và nói "đây là kịch bản ghi lại bước bị lỗi".
+> Lỗi **619 – The control could not be found by id** gần như luôn là **ID trên máy mình khác kịch bản** hoặc **có popup bất ngờ**. Cách chắc nhất: ghi lại kịch bản riêng cho bước đó, dán vào Gemini và nói "đây là kịch bản ghi lại bước bị lỗi".
 
 ---
 
@@ -102,7 +100,7 @@ Hãy:
 
 | Bước | Làm gì |
 |---|---|
-| 1 | Mở file `.vbs` của bạn bằng Notepad › **Ctrl+A**, **Ctrl+C** › về Gemini **Ctrl+V**. |
+| 1 | Mở file **.vbs** của bạn bằng Notepad › **Ctrl+A**, **Ctrl+C** › về Gemini **Ctrl+V**. |
 | 2 | **Shift+Enter** 2 lần › copy **khung dưới đây** › **Ctrl+V** › **Gửi**. |
 
 👉 **COPY KHUNG NÀY dán vào Gemini, ngay dưới file đã dán:**
@@ -124,7 +122,7 @@ Mỗi lần chỉ xin **1** tính năng, chạy thử xong mới xin tiếp.
 
 | Bước | Làm gì |
 |---|---|
-| 1 | Mở file `.vbs` đang chạy tốt bằng Notepad › **Ctrl+A**, **Ctrl+C** › về Gemini **Ctrl+V**. |
+| 1 | Mở file **.vbs** đang chạy tốt bằng Notepad › **Ctrl+A**, **Ctrl+C** › về Gemini **Ctrl+V**. |
 | 2 | **Shift+Enter** 2 lần › copy **khung dưới đây** › **Ctrl+V** › gõ tính năng muốn thêm vào cuối › **Gửi**. |
 
 👉 **COPY KHUNG NÀY dán vào Gemini, ngay dưới file đã dán:**
@@ -135,20 +133,3 @@ Tính năng cần thêm:
 ```
 
 Gợi ý tính năng (gõ vào sau chữ "Tính năng cần thêm:"): chỉ lấy dòng có tiểu mục 1601 và 1602 · thêm sheet Tổng hợp cộng số tiền theo MST · tách sheet theo cơ quan thuế · nhớ khoảng dòng để hôm sau chạy tiếp.
-
----
-
-## Dành cho giảng viên – Hướng dẫn cài Gem "Trợ giúp bot TMS"
-
-Tạo Gem (gemini.google.com › Explore Gems › New Gem), dán đoạn dưới vào ô **Instructions**, đính kèm file `BOT_TONG_QUAN.vbs` mẫu ở phần **Knowledge**, rồi **Share › Copy link** gửi lớp. Học viên mở link chỉ cần dán kịch bản ghi hoặc log lỗi rồi Gửi.
-
-```
-Bạn là trợ lý giúp cán bộ thuế (người mới, không biết lập trình) làm bot VBScript chạy trên TMS (SAP GUI).
-Luôn dựa trên file BOT_TONG_QUAN.vbs trong Knowledge. Không bao giờ viết lại cả file; chỉ sửa hằng số MAN_HINH, các Const ID và Sub CacBuocTrenTMS, hoặc đúng Sub bị lỗi.
-Máy người dùng chỉ có wscript, PowerShell 5, Excel; không Python, không macro VBA.
-Code chỉ dùng ký tự ASCII. Trước mỗi thao tác SAP có dòng Ghi "  bN: ...". Sau mỗi sendVKey/press/select gọi ChoSap. Không dùng On Error trong CacBuocTrenTMS.
-Khi người dùng dán kịch bản ghi (thường bắt đầu bằng "If Not IsObject(application)"): sửa MAN_HINH và CacBuocTrenTMS theo kịch bản, trả 2 khối code và hướng dẫn chỗ dán từng bước.
-Khi người dùng dán log lỗi (có dòng bN và !!!): nói bot chết ở bước nào, vì sao (2–3 câu), trả đúng đoạn sửa.
-Nếu thấy MST, tên người nộp thuế, số tiền thật hoặc mật khẩu: nhắc người dùng xóa trước khi gửi tiếp.
-Trả lời tiếng Việt, ngắn, từng bước đánh số, chỉ rõ bấm phím gì trong Notepad.
-```
