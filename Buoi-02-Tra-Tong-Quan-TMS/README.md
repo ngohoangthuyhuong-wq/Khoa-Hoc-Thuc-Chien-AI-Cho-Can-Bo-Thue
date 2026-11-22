@@ -14,40 +14,40 @@ Mục tiêu: học viên tự ghi kịch bản tra tổng quan 1 MST trên SAP G
 
 ## Quy trình 5 bước
 
-1. **Chuẩn bị**: bật Scripting (Alt+F12 › Options › Accessibility & Scripting › Scripting › tick *Enable scripting*, bỏ tick 2 ô *Notify when…*), có Excel, tạo thư mục `BOT_TONG_QUAN` trên Desktop.
+1. **Chuẩn bị**: bật Scripting (Alt+F12 › Options › Accessibility & Scripting › Scripting › tick *Enable scripting*, bỏ tick 2 ô *Notify when…*), có Excel, tạo thư mục **BOT_TONG_QUAN** trên Desktop.
 2. **Ghi kịch bản**: Alt+F12 › *Script Recording and Playback…* › *More* (chọn chỗ lưu) › *Record* › làm tay trọn 1 MST trên FMCACOV › *Stop*.
 3. **Ra lệnh Gemini**: làm theo mục **"Bước 3 – Cách gửi cho Gemini"** ngay bên dưới.
 4. **Ráp và chạy thử**: lưu đúng tên, đúng encoding, thử với 3–5 MST.
 5. **Sửa lỗi và nâng cấp**: dùng prompt sửa lỗi, mỗi lần xin một tính năng.
 
-> **Bảo mật:** trước khi dán lên Gemini, thay MST thật bằng MST mẫu `0100000000`. Không dán tên, địa chỉ, số tiền của NNT. Không bao giờ dán user hoặc mật khẩu TMS.
+> **Bảo mật:** trước khi dán lên Gemini, thay MST thật bằng MST mẫu **0100000000**. Không dán tên, địa chỉ, số tiền của NNT. Không bao giờ dán user hoặc mật khẩu TMS.
 
 ---
 
 ## Bước 3 – Cách gửi cho Gemini (hướng dẫn thao tác)
 
 > 📖 Phần này là **hướng dẫn để đọc và làm theo**. **KHÔNG dán phần này vào Gemini.**
-> Thứ dán vào Gemini chỉ là **khung xám** có dòng 👉 *"COPY KHUNG NÀY"* ở bên dưới.
+> Thứ dán vào Gemini chỉ là **khung xám to có nút copy ở góc**, nằm ngay dưới dòng 👉 *"COPY KHUNG NÀY"*.
 
 **Nguyên tắc: copy cái nào, dán ngay cái đó.** Dán kịch bản trước, dán prompt ngay bên dưới, rồi Gửi. Không cần bôi đen gì cả.
 
 | Bước | Làm gì |
 |---|---|
-| 1 | Chuột phải file kịch bản ghi `GHI_TONG_QUAN.vbs` › **Open with** (Mở bằng) › **Notepad**. *Không bấm đúp* – bấm đúp là chạy kịch bản. |
-| 2 | Bấm **Ctrl+H**: ô *Find what* gõ MST thật đã dùng lúc ghi, ô *Replace with* gõ `0100000000` › **Replace All**. Rồi bấm **Ctrl+A**, **Ctrl+C**. Đóng Notepad, bấm **Don't Save**. |
+| 1 | Chuột phải file kịch bản ghi **GHI_TONG_QUAN.vbs** › **Open with** (Mở bằng) › **Notepad**. *Không bấm đúp* – bấm đúp là chạy kịch bản. |
+| 2 | Bấm **Ctrl+H**: ô *Find what* gõ MST thật đã dùng lúc ghi, ô *Replace with* gõ **0100000000** › **Replace All**. Rồi bấm **Ctrl+A**, **Ctrl+C**. Đóng Notepad, bấm **Don't Save**. |
 | 3 | Mở **gemini.google.com** › **New chat**. Bấm vào ô chat › **Ctrl+V** (kịch bản hiện ra trong ô chat). **Chưa Gửi.** |
 | 4 | Bấm **Shift+Enter** 2 lần để xuống dòng. Quay lại trang này, bấm nút copy ở góc phải **khung Prompt 1** › về Gemini **Ctrl+V**. |
 | 5 | Bấm **Gửi**. |
 
 > ⚠️ Trong ô chat Gemini, **Enter là gửi luôn**. Muốn xuống dòng thì bấm **Shift+Enter**.
 
-**Sau khi Gemini trả lời:** lưu file `.vbs` (mục *Lưu code thành file* bên dưới). Rồi copy **khung Prompt 2**, dán vào **cùng cuộc trò chuyện** đó, Gửi, lưu tiếp 3 file.
+**Sau khi Gemini trả lời:** lưu file **.vbs** (mục *Lưu code thành file* bên dưới). Rồi copy **khung Prompt 2**, dán vào **cùng cuộc trò chuyện** đó, Gửi, lưu tiếp 3 file.
 
 > Code bị cắt giữa chừng? Gõ: "Gửi lại toàn bộ file trong 1 khối code, không lược."
 
 ---
 
-## Prompt 1 – Bot `.vbs`
+## Prompt 1 – Bot **.vbs**
 
 👉 **COPY KHUNG NÀY dán vào Gemini, ngay dưới kịch bản đã dán** (bấm nút copy góc phải khung):
 
@@ -68,7 +68,7 @@ Mục tiêu: học viên tự ghi kịch bản tra tổng quan 1 MST trên SAP G
 [TRẢ VỀ] Một khối code HOÀN CHỈNH, không lược đoạn nào. Sau code, liệt kê các ID findById tôi cần kiểm tra lại trên máy mình.
 ```
 
-## Prompt 2 – App giao diện + 2 file `.bat`
+## Prompt 2 – App giao diện + 2 file **.bat**
 
 👉 **COPY KHUNG NÀY dán vào Gemini**, gửi tiếp trong **cùng cuộc trò chuyện** với Prompt 1:
 
@@ -92,14 +92,14 @@ C. DUNG.bat – tạo file STOP_TONG_QUAN.txt.
 
 - Windows 11: mở thư mục bất kỳ › **View** (Xem) › **Show** (Hiện) › tick **File name extensions**.
 - Windows 10: mở thư mục bất kỳ › tab **View** › tick **File name extensions**.
-- Tạo thư mục `BOT_TONG_QUAN` trên Desktop: chuột phải ra màn hình › New › Folder › gõ tên › Enter.
+- Tạo thư mục **BOT_TONG_QUAN** trên Desktop: chuột phải ra màn hình › New › Folder › gõ tên › Enter.
 
 **Lưu từng file (làm 4 lần)**
 
-1. Bấm phím **Windows**, gõ `notepad`, bấm **Enter**.
+1. Bấm phím **Windows**, gõ **notepad**, bấm **Enter**.
 2. Sang Gemini, ở góc trên bên phải khối code, bấm nút **Copy** (biểu tượng 2 ô vuông). Đừng bôi đen bằng chuột.
 3. Quay lại Notepad, bấm **Ctrl+V**. Kéo xuống cuối xem code còn đủ.
-4. Bấm **Ctrl+Shift+S** (File › Save as). Bên trái chọn **Desktop**, bấm đúp mở thư mục `BOT_TONG_QUAN`.
+4. Bấm **Ctrl+Shift+S** (File › Save as). Bên trái chọn **Desktop**, bấm đúp mở thư mục **BOT_TONG_QUAN**.
 5. Ô **Save as type**: chọn **All files (\*.\*)**.
 6. Ô **File name**: gõ đúng tên theo bảng dưới.
 7. Ô **Encoding** (cạnh nút Save): chọn theo bảng, rồi bấm **Save**.
@@ -107,29 +107,29 @@ C. DUNG.bat – tạo file STOP_TONG_QUAN.txt.
 
 | Gõ vào ô File name | Lấy code từ | Ô Encoding chọn |
 |---|---|---|
-| `BOT_TONG_QUAN.vbs` | Prompt 1 | ANSI |
-| `APP_TONG_QUAN.ps1` | Prompt 2 – khối A | UTF-8 with BOM |
-| `CHAY.bat` | Prompt 2 – khối B | ANSI |
-| `DUNG.bat` | Prompt 2 – khối C | ANSI |
+| **BOT_TONG_QUAN.vbs** | Prompt 1 | ANSI |
+| **APP_TONG_QUAN.ps1** | Prompt 2 – khối A | UTF-8 with BOM |
+| **CHAY.bat** | Prompt 2 – khối B | ANSI |
+| **DUNG.bat** | Prompt 2 – khối C | ANSI |
 
-**Kiểm tra:** thư mục có đúng 4 file, đuôi `.vbs` `.ps1` `.bat`, không có `.txt`.
-- Lỡ có `.txt`: chuột phải file › **Rename** › xóa `.txt` ở cuối › Enter › Yes.
+**Kiểm tra:** thư mục có đúng 4 file, đuôi **.vbs** **.ps1** **.bat**, không có **.txt**.
+- Lỡ có **.txt**: chuột phải file › **Rename** › xóa **.txt** ở cuối › Enter › Yes.
 - Lỡ sai encoding: mở lại file bằng Notepad › Ctrl+Shift+S › chọn lại Encoding › Save › Yes để ghi đè.
 
 ## Chạy thử với 3–5 MST
 
 1. Chuột phải từng file › **Properties** › nếu dưới cùng có ô **Unblock** thì tick › **OK**.
 2. Mở SAP, đăng nhập TMS, về màn hình chính.
-3. Bấm đúp **CHAY.bat** (không bấm đúp file `.vbs`). Cửa sổ app hiện ra.
+3. Bấm đúp **CHAY.bat** (không bấm đúp file **.vbs**). Cửa sổ app hiện ra.
 4. Copy 3–5 MST thử (mỗi dòng 1 MST, có 1 MST sai), bấm **Dan clipboard** hoặc Ctrl+V vào ô danh sách.
 5. Bấm **LAY TONG QUAN** › **Yes**. Không đụng chuột vào SAP và Excel khi bot chạy.
-6. Xong, mở `KET_QUA_TONG_QUAN.xlsx` trong thư mục, so 1 MST với tra tay trên FMCACOV.
+6. Xong, mở **KET_QUA_TONG_QUAN.xlsx** trong thư mục, so 1 MST với tra tay trên FMCACOV.
 
 ## Prompt sửa lỗi
 
 Cũng làm theo nguyên tắc **copy cái nào, dán ngay cái đó**:
-1. Mở `LOG_TONG_QUAN.txt` bằng Notepad, bấm **Ctrl+End** xuống cuối, bôi đen khoảng 20 dòng cuối › **Ctrl+C**.
-2. Vào **đúng cuộc trò chuyện Gemini đã tạo bot** › **Ctrl+V**. Kiểm tra không còn MST thật (có thì sửa thành `0100000000`).
+1. Mở **LOG_TONG_QUAN.txt** bằng Notepad, bấm **Ctrl+End** xuống cuối, bôi đen khoảng 20 dòng cuối › **Ctrl+C**.
+2. Vào **đúng cuộc trò chuyện Gemini đã tạo bot** › **Ctrl+V**. Kiểm tra không còn MST thật (có thì sửa thành **0100000000**).
 3. **Shift+Enter** 2 lần › copy **khung dưới đây** › **Ctrl+V** › gõ thêm câu thông báo lỗi Windows hiện ra (nếu có) › **Gửi**.
 
 👉 **COPY KHUNG NÀY dán vào Gemini, ngay dưới đoạn log đã dán:**
