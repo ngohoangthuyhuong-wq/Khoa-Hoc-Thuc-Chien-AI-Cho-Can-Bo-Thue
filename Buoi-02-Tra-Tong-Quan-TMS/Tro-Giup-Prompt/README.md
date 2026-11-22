@@ -32,6 +32,6 @@ Mở **LOG_TONG_QUAN.txt** bằng Notepad:
 - Dòng bN cuối cùng của MST lỗi = bot chết ở bước đó.
 - Các dòng !!! = mã lỗi, màn hình đang đứng, popup đang mở, SAP báo gì.
 
-Copy đoạn log đó (thay MST thật bằng **0100000000**) và dùng **Prompt 2** trong [TRO_GIUP_PROMPT.md](TRO_GIUP_PROMPT.md).
+Copy đoạn log đó và dùng **Prompt 2** trong [TRO_GIUP_PROMPT.md](TRO_GIUP_PROMPT.md).
 
 > Bot mẫu viết theo màn FMCACOV trên máy giảng viên. Nếu máy bạn ID màn hình khác, log sẽ báo ở bước **b2** hoặc **b3**: ghi lại kịch bản và dùng **Prompt 1** để Gemini sửa đúng chỗ.

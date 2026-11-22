@@ -5,9 +5,9 @@ Quay về [hướng dẫn Buổi 2](../README.md) · [mục lục khóa học](.
 
 > ⚠️ **Tắt dịch tự động của trình duyệt** (biểu tượng 文A trên thanh địa chỉ › *Hiển thị bản gốc*) – bản dịch máy làm sai chữ.
 >
-> 📖 Chữ thường là **hướng dẫn để đọc**. Thứ dán vào Gemini chỉ là **khung xám to có nút copy ở góc**, nằm ngay dưới dòng 👉 *COPY KHUNG NÀY*.
+> 📖 Chữ thường là hướng dẫn để đọc. **Chỉ copy khung xám có dòng 👉 COPY KHUNG NÀY.**
 
-> **Bảo mật:** trước khi dán bất cứ thứ gì lên Gemini, thay MST thật bằng **0100000000**. Không dán tên, số tiền của NNT, user hay mật khẩu TMS.
+> **Bảo mật:** không bao giờ dán user hoặc mật khẩu TMS lên Gemini.
 
 ## Nguyên tắc chung – nhớ 1 câu
 
@@ -35,11 +35,10 @@ Phần Gemini tự viết rất ít, nên ít sai và cả lớp có chung một
 
 | Bước | Làm gì |
 |---|---|
-| 1 | Mở **gemini.google.com** › **New chat**. |
-| 2 | Chuột phải **BOT_TONG_QUAN.vbs** (trong thư mục bộ trợ giúp) › **Open with › Notepad** › **Ctrl+A**, **Ctrl+C** › đóng Notepad › về Gemini bấm vào ô chat › **Ctrl+V**. |
-| 3 | **Shift+Enter** 2 lần. |
-| 4 | Chuột phải file **kịch bản bạn vừa ghi** › **Open with › Notepad** › **Ctrl+H** thay MST thật bằng **0100000000** › **Ctrl+A**, **Ctrl+C** › đóng, bấm **Don't Save** › về Gemini **Ctrl+V**. |
-| 5 | **Shift+Enter** 2 lần › copy **khung dưới đây** › về Gemini **Ctrl+V** › **Gửi**. |
+| 1 | Vào **gemini.google.com** › **New chat**. |
+| 2 | Mở **BOT_TONG_QUAN.vbs** (bộ trợ giúp) bằng Notepad › **Ctrl+A**, **Ctrl+C** › Gemini **Ctrl+V**. |
+| 3 | **Shift+Enter** 2 lần. Mở **kịch bản bạn vừa ghi** bằng Notepad › **Ctrl+A**, **Ctrl+C** › Gemini **Ctrl+V**. |
+| 4 | **Shift+Enter** 2 lần › copy **khung dưới đây** › **Ctrl+V** › **Gửi**. |
 
 👉 **COPY KHUNG NÀY dán vào Gemini, ngay dưới 2 phần đã dán:**
 
@@ -48,10 +47,10 @@ Phần Gemini tự viết rất ít, nên ít sai và cả lớp có chung một
 [BỐI CẢNH] Tôi là cán bộ thuế, dùng TMS (SAP GUI) trên máy cơ quan. Máy chỉ chạy được wscript (VBScript), PowerShell 5, Excel. Không có Python, không chạy macro VBA.
 [TÀI LIỆU] Phía trên tin nhắn này tôi đã dán 2 phần:
 - Phần 1 (dán trước): bot mẫu BOT_TONG_QUAN.vbs đang chạy được, bắt đầu bằng dòng "' ====". KHÔNG viết lại file này, chỉ sửa đúng 2 chỗ có dòng ">>> SUA O DAY <<<".
-- Phần 2 (dán sau): kịch bản tôi ghi bằng Script Recording khi làm tay 1 MST, thường bắt đầu bằng "If Not IsObject(application)". MST mẫu trong kịch bản là 0100000000.
+- Phần 2 (dán sau): kịch bản tôi ghi bằng Script Recording khi làm tay 1 MST, thường bắt đầu bằng "If Not IsObject(application)". MST trong kịch bản là MST tôi gõ lúc ghi.
 [VIỆC CẦN LÀM]
 1. Sửa hằng số MAN_HINH thành mã màn hình trong kịch bản ghi (dòng có okcd).
-2. Viết lại Sub CacBuocTrenTMS(mst) bằng các bước trong kịch bản ghi, bỏ dòng gõ mã màn hình và các dòng kết nối SAP ở đầu kịch bản. Thay MST mẫu bằng biến mst.
+2. Viết lại Sub CacBuocTrenTMS(mst) bằng các bước trong kịch bản ghi, bỏ dòng gõ mã màn hình và các dòng kết nối SAP ở đầu kịch bản. Thay MST lúc ghi bằng biến mst.
 3. Sau mỗi lần sendVKey, press hoặc select: gọi ChoSap.
 4. TRƯỚC mỗi thao tác: thêm 1 dòng Ghi "  bN: <việc đang làm, không dấu>", N tăng dần từ b1.
 5. ID nào dài lặp lại nhiều lần thì đưa lên thành hằng số Const ở đầu file.
@@ -77,14 +76,14 @@ Bot mẫu ghi log từng bước vào **LOG_TONG_QUAN.txt**. Khi lỗi, log trô
 
 | Bước | Làm gì |
 |---|---|
-| 1 | Mở **đúng cuộc trò chuyện Gemini đã tạo bot** (cột trái Gemini có lịch sử). |
-| 2 | Mở **LOG_TONG_QUAN.txt** bằng Notepad › **Ctrl+End** xuống cuối › bôi đen từ dòng **MST ...** của MST bị lỗi đến hết › **Ctrl+C** › về Gemini **Ctrl+V**. Sửa MST thật thành **0100000000**. |
+| 1 | Mở **LOG_TONG_QUAN.txt** bằng Notepad › **Ctrl+End** › bôi đen từ dòng **MST ...** bị lỗi đến hết › **Ctrl+C**. |
+| 2 | Vào **đúng cuộc trò chuyện Gemini đã tạo bot** › **Ctrl+V**. |
 | 3 | **Shift+Enter** 2 lần › copy **khung dưới đây** › **Ctrl+V** › **Gửi**. |
 
 👉 **COPY KHUNG NÀY dán vào Gemini, ngay dưới đoạn log đã dán:**
 
 ```
-Bot của tôi bị lỗi. Phần tôi dán ở PHÍA TRÊN là đoạn log của MST bị lỗi (đã thay MST thật). Bot là file BOT_TONG_QUAN.vbs bạn đã giúp tôi sửa trong cuộc trò chuyện này.
+Bot của tôi bị lỗi. Phần tôi dán ở PHÍA TRÊN là đoạn log của MST bị lỗi. Bot là file BOT_TONG_QUAN.vbs bạn đã giúp tôi sửa trong cuộc trò chuyện này.
 Hãy:
 1) Nhìn dòng bN cuối và các dòng !!! để nói bot chết ở bước nào, vì sao (2–3 câu, dễ hiểu).
 2) Chỉ sửa đúng Sub hoặc hằng số liên quan, trả về NGUYÊN đoạn đã sửa. Không viết lại cả file.
