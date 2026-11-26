@@ -22,5 +22,3 @@ Mỗi buổi là một thư mục riêng, trong đó có slide PDF và file hư�
 - Bấm vào tên buổi trong mục lục để mở hướng dẫn của buổi đó.
 - Trong hướng dẫn, mỗi prompt nằm trong một khung riêng: bấm nút copy ở góc phải khung để chép.
 - Bấm vào file **.pdf** để xem slide ngay trên trình duyệt. Muốn tải về máy thì bấm nút tải (mũi tên) ở góc phải.
-
-> **Bảo mật:** không bao giờ dán user hay mật khẩu TMS lên công cụ AI.
