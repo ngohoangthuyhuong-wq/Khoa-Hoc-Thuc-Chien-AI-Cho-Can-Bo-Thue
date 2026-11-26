@@ -33,6 +33,8 @@ SAP đang mở, đã đăng nhập TMS.
 
 Vào [gemini.google.com](https://gemini.google.com) › đăng nhập › **New chat**. Giữ nguyên cuộc trò chuyện này đến hết buổi.
 
+> 💡 **Kịch bản** = chữ trong file **ghi.vbs** vừa copy ở việc 2 (mở bằng Notepad thấy toàn dòng kiểu *session.findById…*).
+
 1. Ctrl+V để dán kịch bản. **Chưa Gửi.**
 2. **Shift+Enter** hai lần (Enter là gửi luôn).
 3. Copy khung prompt bên dưới › Ctrl+V › **Gửi**.
