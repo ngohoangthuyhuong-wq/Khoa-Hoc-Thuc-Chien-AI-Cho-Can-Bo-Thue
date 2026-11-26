@@ -29,4 +29,4 @@ Sau buổi học, học viên có thể:
 | 05 | Kỹ năng Prompt – cách đặt và so sánh | 35 phút |
 | 06 | Tạo app, chạy code và thực hành | 35 phút |
 
-> **Nhớ:** công chức kiểm tra tổng số, đối chiếu với dữ liệu gốc trên hệ thống và chịu trách nhiệm về kết quả. Không dán dữ liệu người nộp thuế thật, user hay mật khẩu lên công cụ AI.
+> **Nhớ:** công chức kiểm tra tổng số, đối chiếu với dữ liệu gốc trên hệ thống và chịu trách nhiệm về kết quả.
