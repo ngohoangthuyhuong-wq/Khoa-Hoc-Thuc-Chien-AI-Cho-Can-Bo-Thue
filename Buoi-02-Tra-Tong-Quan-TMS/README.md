@@ -10,8 +10,6 @@ Làm trên trang **[gemini.google.com](https://gemini.google.com)**. Không cài
 
 Mục tiêu: ghi tay 1 mã số thuế trên FMCACOV, dán **một prompt** vào Gemini, có cửa sổ để dán nhiều mã rồi bấm Chạy. Không cần biết lập trình.
 
-> **Bảo mật:** không bao giờ dán user hoặc mật khẩu TMS lên Gemini.
-
 ---
 
 ## Làm 4 việc
