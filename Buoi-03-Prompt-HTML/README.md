@@ -2,7 +2,7 @@
 
 Giảng viên: Ngô Hoàng Thuỳ Hương · Zalo 0328 878 297
 
-Slide bài giảng: [Buoi3_Slide.pdf](Buoi3_Slide.pdf) · Quay về [mục lục khóa học](../README.md)
+Mọi thứ của buổi 3 nằm trong thư mục này: slide [Buoi3_Slide.pdf](Buoi3_Slide.pdf), tool mẫu [PDF_SANG_EXCEL.html](PDF_SANG_EXCEL.html) và 3 file mẫu để thử. Quay về [mục lục khóa học](../README.md)
 
 Làm trên trang **[gemini.google.com](https://gemini.google.com)**. Không cài thêm phần mềm.
 
@@ -84,7 +84,7 @@ Lỡ thành `PDF_SANG_EXCEL.html.txt`: chuột phải › **Rename** › xóa `.
 
 1. Máy phải có mạng (lần đầu tool tải thư viện và bộ đọc tiếng Việt).
 2. Bấm đúp **PDF_SANG_EXCEL.html**.
-3. Kéo vào 1 PDF có chữ, 1 PDF scan, 1 ảnh chụp bảng. Chưa có file thì dùng file mẫu trong thư mục [Bai-1-PDF-Sang-Excel](Bai-1-PDF-Sang-Excel).
+3. Kéo vào 1 PDF có chữ, 1 PDF scan, 1 ảnh chụp bảng. Chưa có file thì dùng file mẫu ngay trong thư mục này: [mau_co_chu.pdf](mau_co_chu.pdf), [mau_scan.pdf](mau_scan.pdf), [mau_anh_chup.jpg](mau_anh_chup.jpg).
 4. Chờ thanh tiến độ chạy hết, xem bảng trên màn hình.
 5. Bấm **Tải Excel**, mở file ra. Dò lại 1 mã số thuế và 1 số tiền với bản gốc.
 
@@ -104,7 +104,7 @@ PDF có chữ đọc gần như ngay. Trang scan mất vài giây mỗi trang. S
 | Excel lệch cột, dính cột | Nhắn: `Cột Số tiền bị dính vào cột Tên, tách ra. Gửi lại cả file.` |
 | Số tiền thành chữ, không cộng được | Nhắn: `Số kiểu 1.234.567 phải thành số. Gửi lại cả file.` |
 
-Gemini sửa mãi không được: mở file mẫu [PDF_SANG_EXCEL.html](Bai-1-PDF-Sang-Excel/PDF_SANG_EXCEL.html) (bấm nút tải ở góc phải) để có bản chạy được, rồi tập tiếp phần nâng cấp.
+Gemini sửa mãi không được: mở file mẫu [PDF_SANG_EXCEL.html](PDF_SANG_EXCEL.html) (bấm nút tải ở góc phải) để có bản chạy được, rồi tập tiếp phần nâng cấp.
 
 ### Tự nâng cấp – mỗi lần một câu
 
