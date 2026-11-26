@@ -7,8 +7,6 @@ Quay về [hướng dẫn Buổi 2](../README.md) · [mục lục khóa học](.
 >
 > 📖 Chữ thường là hướng dẫn để đọc. **Chỉ copy khung xám có dòng 👉 COPY KHUNG NÀY.**
 
-> **Bảo mật:** không bao giờ dán user hoặc mật khẩu TMS lên Gemini.
-
 ## Nguyên tắc chung – nhớ 1 câu
 
 **Copy cái nào, dán ngay cái đó. Dán tài liệu trước, dán prompt sau cùng, rồi Gửi.**
